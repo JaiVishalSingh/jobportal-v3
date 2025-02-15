@@ -69,10 +69,10 @@ const Header = () => {
   }
 
   return (
-    <div className="w-full bg-cape-cod-950 px-6 text-white h-20 flex justify-between items-center font-['poppins']">
+    <div className="w-full bg-cape-cod-950 px-6 sm-mx:px-3 text-white h-20 flex justify-between items-center font-['poppins']">
       <div className="flex gap-3 items-center text-blue-400">
+      <Link to="/" className="flex items-center gap-2">
         <img src={require("../../assets/logo.png")} alt="Stemlen Logo" className="h-10 w-11 " />
-        <Link to="">
           <div className="text-3xl font-semibold xs-mx:hidden"><span className="text-cape-cod-100">Stem</span>len</div>
         </Link>
       </div>

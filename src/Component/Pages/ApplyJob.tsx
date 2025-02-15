@@ -1,6 +1,6 @@
 import { Button, Divider } from "@mantine/core"
 import { IconArrowLeft } from "@tabler/icons-react"
-import { Link, useNavigate, useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import ApplyJobComp from "../ApplyJob/ApplyJobComp"
 import { useEffect, useState } from "react"
 import { getJob } from "../../Services/JobService"

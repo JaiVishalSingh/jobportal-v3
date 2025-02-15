@@ -1,5 +1,5 @@
 import {Anchor,Button,Checkbox,Group,LoadingOverlay,PasswordInput,Radio,rem,TextInput,} from "@mantine/core";
-import { IconAt, IconCheck, IconLock, IconX } from "@tabler/icons-react";
+import { IconAt, IconCheck, IconLock } from "@tabler/icons-react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { registerUser } from "../../Services/UserService";
@@ -99,8 +99,8 @@ const SignUp = () => {
 
   return (
     <><LoadingOverlay visible={loading} zIndex={1000} overlayProps={{ radius: "sm", blur: 2 }} />
-    <div className="w-1/2 px-24 flex flex-col justify-center gap-1">
-      <div className="text-2xl font-semibold">Create Account</div>
+    <div className="w-1/2 px-24 flex flex-col justify-center gap-1 mx-auto sm-mx:w-full sm-mx:px-4">
+      <div className="text-2xl font-semibold sm-mx:text-xl">Create Account</div>
 
       <TextInput
         name="name"
@@ -151,7 +151,7 @@ const SignUp = () => {
         label="You are?"
         withAsterisk
       >
-        <Group mt="xs">
+        <Group mt="xs" className="sm-mx:flex-col sm-mx:gap-2">
           <Radio
             className="py-4 px-6 border has-[:checked]:border-blue-400 border-cape-cod-800 rounded-lg"
             value="APPLICANT"

@@ -1,4 +1,3 @@
-import landingImage from '../../assets/Connecting.png';
 import jobImage from '../../assets/jobimg1.png';
 import connetingImage from '../../assets/connectingImg.png';
 
@@ -8,7 +7,7 @@ const Information = () => {
             <div className="text-4xl text-center font-semibold mb-3">
                 Why <span className="text-blue-400">Stemlen</span>
             </div>
-            <p className="text-lg mb-10 mx-auto text-cape-cod-300 text-center w-1/2">
+            <p className="text-lg mb-10 mx-auto text-cape-cod-300 text-center w-1/2 sm-mx:w-[90%]">
             Stemlen is where growth begins. Just like a plant stems upward to reach new heights, we help you grow taller in your career, skills, and opportunities.</p>
 
             <div className="flex flex-wrap px-16 justify-center items-center gap-10">

@@ -43,7 +43,7 @@ const SignUpPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
   return (
-    <div className="min-h-[100vh] bg-cape-cod-950 font-['poppins'] p-2 overflow-hidden">
+    <div className="min-h-[100vh] bg-cape-cod-950 font-['poppins'] p-2  overflow-hidden">
       <Button
         leftSection={<IconArrowLeft size={20} />}
         onClick={() => navigate("/")}
@@ -52,14 +52,14 @@ const SignUpPage = () => {
         variant="light"
       >Home</Button>
 
-      <div className="w-[100vw] h-[75vh] flex justify-center items-center">
+      <div className="w-[100vw] h-[75vh] flex justify-center items-center md-mx:-ml-2">
         {/* {location.pathname === '/signup' ? (
           <SignUp />
         ) : (
           <Login />
         )} */}
         {location.pathname === '/signup' && (
-          <div className="w-1/2 h-full flex flex-col items-center justify-center">
+          <div className="w-1/2 h-full flex flex-col items-center justify-center md-mx:hidden">
             <img
               className="-mt-28 -mb-16"
               src={require(`../../assets/Signup.png`)}
