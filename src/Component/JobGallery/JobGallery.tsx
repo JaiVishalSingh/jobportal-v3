@@ -3,6 +3,7 @@ import Card from "./Card"
 import { useEffect, useState } from "react";
 import { getAllJobs } from "../../Services/JobService";
 import { useSelector } from "react-redux";
+import NoJobsImage from "../../assets/images/404Error.png"; 
 
 const JobGallery = () => {
     const profile = useSelector((state: any) => state.profile)
@@ -10,6 +11,7 @@ const JobGallery = () => {
     const [activeTab, setActiveTab] = useState<any>('APPLIED')
     const [jobList, setJobList] = useState<any>([])
     const [showList, setShowList] = useState<any>([])
+    
     useEffect(() => {
         getAllJobs()
             .then((res) => {
@@ -56,17 +58,22 @@ const JobGallery = () => {
                     </Tabs.List>
 
                     <Tabs.Panel value={activeTab}>
-                        <div className='flex flex-wrap gap-5 mt-10 sm-mx:gap-3 xs-mx:gap-2 xs-mx:justify-center'>
-                            {
-                                showList.map((item: any, index: any) => <Card key={index} {...item} {...{[activeTab.toLowerCase()]:true}} />)
-                            }
-                        </div>
+                        {showList.length > 0 ? (
+                            <div className='flex flex-wrap gap-5 mt-10 sm-mx:gap-3 xs-mx:gap-2 xs-mx:justify-center'>
+                                {showList.map((item: any, index: any) => <Card key={index} {...item} {...{[activeTab.toLowerCase()]:true}} />)}
+                            </div>
+                        ) : (
+                            <div className='flex flex-col items-center mt-10 bs-mx:mt-20'>
+                                <img src={NoJobsImage} alt="No jobs available" className='w-[20%] h-[20%] bs-mx:w-[40%] bs-mx:h-[40%]' />
+                                <p className='mt-4 text-lg font-semibold text-gray-500 text-center'>
+                                    No jobs found in this category <br /> 
+                                    Note: Only applications submitted through this portal will be displayed here , NO Redirected apply.
+                                </p></div>
+                        )}
                     </Tabs.Panel>
-
                 </Tabs>
             </div>
         </div>
-
     )
 }
 
